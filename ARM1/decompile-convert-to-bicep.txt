@@ -1,0 +1,17 @@
+ Directory: C:\Users\HJCWKZ23\GITABLE\ARM1
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          12/28/2024 10:06 PM                z--bicep
+-a---          12/28/2024  9:40 PM            289 test.json
+-a---          12/28/2024 11:45 PM           4896 testARM1.json
+
+PS C:\Users\HJCWKZ23\GITABLE\ARM1> az bicep decompile --file .\testARM1.json
+A new Bicep release is available: v0.32.4. Upgrade now by running "az bicep upgrade".
+WARNING: Decompilation is a best-effort process, as there is no guaranteed mapping from ARM JSON to Bicep Template or Bicep Parameters.
+You may need to fix warnings and errors in the generated bicep/bicepparam file(s), or decompilation may fail entirely if an accurate conversion is not possible.
+If you would like to report any issues or inaccurate conversions, please see https://github.com/Azure/bicep/issues.
+C:\Users\HJCWKZ23\GITABLE\ARM1\testARM1.bicep(86,22) : Warning adminusername-should-not-be-literal: Property 'adminUserName' should not use a literal value. Use a param instead. Found literal string value "azureuser" [https://aka.ms/bicep/linter/adminusername-should-not-be-literal]
+C:\Users\HJCWKZ23\GITABLE\ARM1\testARM1.bicep(87,22) : Warning use-secure-value-for-secure-inputs: Property path "properties.osProfile.adminPassword" for resources of type "Microsoft.Compute/virtualMachines@2021-07-01" should be assigned a secure value. [https://aka.ms/bicep/linter/use-secure-value-for-secure-inputs]
+
+PS C:\Users\HJCWKZ23\GITABLE\ARM1>
