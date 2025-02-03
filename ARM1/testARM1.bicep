@@ -109,3 +109,5 @@ resource myVM 'Microsoft.Compute/virtualMachines@2021-07-01' = {
     }
   }
 }
+
+
