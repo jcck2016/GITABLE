@@ -1,0 +1,11 @@
+
+
+///////////////////////////////////////////////////////////////////////////////
+aws --endpoint http://aws:4566 iam add-user-to-group --group-name project-sapphire-developers --user-name jack
+aws --endpoint http://aws:4566 iam add-user-to-group --group-name project-sapphire-developers --user-name "jill"
+
+///////////////////////////////////////////////////////////////////////////////
+aws --endpoint http://aws:4566 iam list-attached-group-policies --group-name project-sapphire-developers
+
+
+aws --endpoint http://aws:4566 iam attach-group-policy --group-name project-sapphire-developers --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess

@@ -1,0 +1,59 @@
+--endpoint http://aws:4566      .... local stack
+
+////////////////////////////////////////////////////////////////////////////////////////
+aws --version
+aws-cli/2.18.12 Python/3.12.6 Linux/5.4.0-1106-gcp exe/x86_64.ubuntu.22
+/////////////////////////////////////////////////////////////////////////////////////////
+aws --endpoint http://aws:4566 iam list-users
+aws --endpoint http://aws:4566 iam list-users
+{
+    "Users": [
+        {
+            "Path": "/",
+            "UserName": "jill",
+            "UserId": "7qeb44m99wdzkymb2pna",
+            "Arn": "arn:aws:iam::000000000000:user/jill",
+            "CreateDate": "2025-02-08T06:11:08.271000+00:00"
+        },
+        {
+            "Path": "/",
+            "UserName": "jack",
+            "UserId": "7gksj9znkd9nn6li0mmo",
+            "Arn": "arn:aws:iam::000000000000:user/jack",
+            "CreateDate": "2025-02-08T06:11:09.192000+00:00"
+        }
+    ]
+}
+////////////////////////////////////////////////////////////////////////////
+aws --endpoint http://aws:4566 iam create-user --user-name jackie
+aws --endpoint http://aws:4566 iam create-user --user-name mary
+
+///////////////////////////////////////////////////////////////////////////////
+aws --endpoint http://aws:4566 iam create-user --user-name mary
+
+aws --endpoint http://aws:4566 iam attach-user-policy --user-name mary --policy-arn arn:aws:iam::aws:policy/AdministratorAccess
+
+///////////////////////////////////////////////////////////////////////////////
+
+aws --endpoint http://aws:4566 iam create-group --group-name project-sapphire
+
+aws --endpoint http://aws:4566 iam create-group --group-name project-sapphire-developers
+{
+    "Group": {
+        "Path": "/",
+        "GroupName": "project-sapphire-developers",
+        "GroupId": "su994o6669rcnb3wxbk0",
+        "Arn": "arn:aws:iam::000000000000:group/project-sapphire-developers",
+        "CreateDate": "2025-02-08T06:25:59.187000+00:00"
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////
+aws --endpoint http://aws:4566 iam add-user-to-group --group-name project-sapphire-developers --user-name jack
+aws --endpoint http://aws:4566 iam add-user-to-group --group-name project-sapphire-developers --user-name "jill"
+
+///////////////////////////////////////////////////////////////////////////////
+aws --endpoint http://aws:4566 iam list-attached-group-policies --group-name project-sapphire-developers
+
+
+aws --endpoint http://aws:4566 iam attach-group-policy --group-name project-sapphire-developers --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess
