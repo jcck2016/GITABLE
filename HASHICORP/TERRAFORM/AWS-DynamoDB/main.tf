@@ -24,7 +24,7 @@ EOF
 }
 
 // get keys from the AWS console on the ACG sandbox sessoins per ps session needed to setup....
-// $Env:AWS_ACCESS_KEY_ID="AKIA6GBMFHSUE2XXSWPG"
-// $Env:AWS_SECRET_ACCESS_KEY="b1JxzpvTTcfPpiqw3TE9ToKqp8muX6armfZ7LZ/o"
+// $Env:AWS_ACCESS_KEY_ID="example"
+// $Env:AWS_SECRET_ACCESS_KEY="example"
 // $Env:AWS_DEFAULT_REGION="us-east-1"
 
