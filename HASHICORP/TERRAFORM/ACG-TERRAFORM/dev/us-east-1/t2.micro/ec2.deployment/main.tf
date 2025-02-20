@@ -12,8 +12,12 @@ locals {
   environment   = local.cdw[3]
 
 
-
-
-
 }
 
+module "instance" {
+  source = "..\\..\\..\\..\\..\\acg-modules\\dev\\instance"
+    instance_type = local.instance_type
+    instance_count = 2
+    
+}
+#---terrafomr module lesson 2:25---#
